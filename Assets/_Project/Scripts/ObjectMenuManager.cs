@@ -8,7 +8,7 @@ public class ObjectMenuManager : MonoBehaviour
     public List<GameObject> objectList;
     public List<GameObject> objectPrefabList;
     public int currentObject = 0;
-
+    private GameObject activeGun; 
  
 
     // Use this for initialization
@@ -31,7 +31,9 @@ public class ObjectMenuManager : MonoBehaviour
         {
             currentObject = objectList.Count - 1;
         }
-        objectList[currentObject].SetActive(true);
+        GameObject gun =  objectList[currentObject];
+        gun.SetActive(true);
+        activeGun = gun;
     }
 
     public void MenuRight()
@@ -42,7 +44,9 @@ public class ObjectMenuManager : MonoBehaviour
         {
             currentObject = 0;
         }
-        objectList[currentObject].SetActive(true);
+        GameObject gun = objectList[currentObject];
+        gun.SetActive(true);
+        activeGun = gun;
     }
 
     public void SpawnCurrentObject()
@@ -51,6 +55,11 @@ public class ObjectMenuManager : MonoBehaviour
             objectList[currentObject].transform.position,
              objectList[currentObject].transform.rotation);
      
+    }
+
+    public GameObject getActiveWeapon()
+    {
+        return activeGun;
     }
     // Update is called once per frame
     void Update()
