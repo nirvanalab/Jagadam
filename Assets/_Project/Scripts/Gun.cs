@@ -5,6 +5,9 @@ using UnityEngine;
 public class Gun : MonoBehaviour {
     public float fireRate;
     protected float lastFireTime;
+    public GameObject bulletPrefab;
+    public Transform bulletLaunchTransform;
+    public AudioClip liveFire;
 
 	// Use this for initialization
 	void Start()
@@ -28,6 +31,19 @@ public class Gun : MonoBehaviour {
     protected void Fire()
     {
         GetComponentInChildren<Animator>().Play("Fire");
+        fireBullet();
+        //play sound
+        GetComponent<AudioSource>().PlayOneShot(liveFire);
         Debug.Log("Fire");
+    }
+
+    protected void fireBullet()
+    {
+        GameObject bullet = Instantiate(bulletPrefab) as GameObject;
+        bullet.transform.position = bulletLaunchTransform.position;
+        bullet.transform.rotation = bulletLaunchTransform.rotation;
+        bullet.GetComponent<Rigidbody>().velocity = transform.parent.forward * 100;
+        // Destroy the bullet after 2 seconds
+        //Destroy(bullet, 2.0f);
     }
 }
