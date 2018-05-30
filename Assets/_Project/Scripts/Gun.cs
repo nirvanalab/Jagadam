@@ -8,6 +8,8 @@ public class Gun : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletLaunchTransform;
     public AudioClip liveFire;
+    public AudioClip dryFire;
+    public AmmoManager ammoManager;
 
 	// Use this for initialization
 	void Start()
@@ -30,10 +32,19 @@ public class Gun : MonoBehaviour {
 
     protected void Fire()
     {
+       if( ammoManager.HasAmmo(tag)) {
+            fireBullet();
+            //play sound
+            GetComponent<AudioSource>().PlayOneShot(liveFire);
+            ammoManager.ConsumeAmmo(tag);
+        }
+       else
+        {
+            GetComponent<AudioSource>().PlayOneShot(dryFire);
+        }
+
         GetComponentInChildren<Animator>().Play("Fire");
-        fireBullet();
-        //play sound
-        GetComponent<AudioSource>().PlayOneShot(liveFire);
+       
         Debug.Log("Fire");
     }
 
