@@ -18,11 +18,13 @@ public class Bullet : MonoBehaviour {
     {
         //destroy object when it becomes  invisible
         Destroy(gameObject);
+       // gameObject.GetComponent<Rigidbody>().useGravity = true;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         //destroy object when it collides
         Destroy(gameObject);
+       // gameObject.GetComponent<Rigidbody>().useGravity = true;
     }
 }
