@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour {
         GameObject weapon = Instantiate(enemyWeapon);
         weapon.transform.position = fireSpot.transform.position;
         weapon.transform.rotation = fireSpot.transform.rotation;
-       robot.Play("Fire");
+      // robot.Play("Fire");
         Debug.Log("Fire");
     }
 }
