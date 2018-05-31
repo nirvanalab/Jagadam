@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4000011314023662}
   - component: {fileID: 135000012570106336}
   - component: {fileID: 54000012538375240}
+  - component: {fileID: 114357600781675640}
   m_Layer: 9
   m_Name: RobotMissileBlue
   m_TagString: Untagged
@@ -71,7 +72,7 @@ Transform:
   m_GameObject: {fileID: 1000010020854282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 4000013263373908}
   - {fileID: 4000011345629992}
@@ -85,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011212488390}
   m_LocalRotation: {x: -1, y: -0, z: -0, w: 0.0000004768371}
-  m_LocalPosition: {x: 0.16381836, y: -0.28, z: -0.91}
+  m_LocalPosition: {x: -0.183, y: -0.28, z: -0.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000011314023662}
@@ -177,6 +178,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114357600781675640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010020854282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d67f55b905a154fab0d2d5ba187231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  damage: 10
 --- !u!135 &135000012570106336
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -196,7 +210,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011212488390}
   serializedVersion: 5
-  lengthInSec: 5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   looping: 1
@@ -297,7 +311,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 1.2884716
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -401,7 +415,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -714,7 +728,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.4
+      value: 0.16265428
       mode: 0
       spread: 0
       speed:
@@ -903,14 +917,14 @@ ParticleSystem:
         - serializedVersion: 2
           time: 0
           value: 1
-          inSlope: -1
-          outSlope: -1
+          inSlope: -3.338719
+          outSlope: -3.338719
           tangentMode: 34
         - serializedVersion: 2
-          time: 1
-          value: 0
-          inSlope: -1
-          outSlope: -1
+          time: 0.27118385
+          value: 0.094593346
+          inSlope: -3.338719
+          outSlope: -3.338719
           tangentMode: 34
         m_PreInfinity: 2
         m_PostInfinity: 2

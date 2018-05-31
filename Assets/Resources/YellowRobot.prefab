@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33000010614207476}
   - component: {fileID: 23000010260699654}
   - component: {fileID: 135000012561474720}
+  - component: {fileID: 95954297869086554}
   m_Layer: 0
   m_Name: RobotRampage_BotBall_v1
   m_TagString: Untagged
@@ -56,6 +57,7 @@ GameObject:
   - component: {fileID: 54000013540776428}
   - component: {fileID: 195000014275328188}
   - component: {fileID: 82000012485114050}
+  - component: {fileID: 114463648425970310}
   m_Layer: 8
   m_Name: YellowRobot
   m_TagString: Untagged
@@ -646,7 +648,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012436853362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.52, y: 0.31, z: 0.429}
+  m_LocalPosition: {x: 0, y: 0.36, z: 0.429}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4000013164045724}
@@ -886,7 +888,7 @@ Transform:
   m_GameObject: {fileID: 1000010332420218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.605179, y: 1.875239, z: 6.6888347}
-  m_LocalScale: {x: 3.599439, y: 3.599439, z: 3.599439}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4000013968732232}
   - {fileID: 4000011028213440}
@@ -1756,6 +1758,43 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95954297869086554
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010122187620}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6fd4ae0c99a0f64c8d6a95e4ef01dd7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114463648425970310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010332420218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759ea670e5bf33a4784656b0db68935f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: YellowRobot
+  enemyWeapon: {fileID: 1000012840967064, guid: b01d0670dae754544a163a4b6932d91b,
+    type: 2}
+  health: 20
+  range: 300
+  fireRate: 2
+  fireSpot: {fileID: 4000011028213440}
+  robot: {fileID: 0}
+  player: {fileID: 0}
 --- !u!135 &135000012561474720
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1778,7 +1817,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.8
   m_Speed: 2
-  m_Acceleration: 8
+  m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 10
