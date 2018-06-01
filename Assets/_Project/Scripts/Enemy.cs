@@ -55,4 +55,26 @@ public class Enemy : MonoBehaviour {
       // robot.Play("Fire");
         Debug.Log("Fire");
     }
+
+
+    public void TakeHit(int amount)
+    {
+        health -= amount;
+        Debug.Log("Enemy Health = " + health);
+        if (health <= 0)
+        {
+            //destroy enemy
+            isDead = true;
+            //robot.Play("Die");
+            Destroy(gameObject);
+            //StartCoroutine("DestroyEnemy");
+        }
+
+    }
+
+    IEnumerator DestroyEnemy()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }
 }

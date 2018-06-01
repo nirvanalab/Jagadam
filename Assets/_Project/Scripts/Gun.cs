@@ -45,7 +45,7 @@ public class Gun : MonoBehaviour {
 
         GetComponentInChildren<Animator>().Play("Fire");
        
-        Debug.Log("Fire");
+       // Debug.Log("Fire");
     }
 
     protected void fireBullet()
