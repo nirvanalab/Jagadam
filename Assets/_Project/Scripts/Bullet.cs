@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-    public int damage=25;
+    public int damage=3;
 	// Use this for initialization
 	void Start () {
 		
@@ -24,14 +24,19 @@ public class Bullet : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("Bullet collision");
+        Debug.Log("Bullet collision");
         if (collision.gameObject.GetComponent<Enemy>() != null && collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Enemy-Player Collision Enter");
             collision.gameObject.GetComponent<Enemy>().TakeHit(damage);
+            //destroy object when it collides
+            Destroy(gameObject);
         }
-        //destroy object when it collides
-        Destroy(gameObject);
+        else
+        {
+            Destroy(gameObject, 3);
+        }
+ 
        // gameObject.GetComponent<Rigidbody>().useGravity = true;
     }
 }

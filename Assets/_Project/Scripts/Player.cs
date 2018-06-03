@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -71,5 +72,10 @@ public class Player : MonoBehaviour {
             default:
                 break;
         }
+    }
+
+    public static implicit operator GameObject(Player v)
+    {
+        throw new NotImplementedException();
     }
 }

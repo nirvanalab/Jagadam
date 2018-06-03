@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
@@ -22,11 +23,32 @@ public class Enemy : MonoBehaviour {
     public GameObject player;
     private float lastFiredTime;
 
+    [SerializeField]
+    private AudioClip deathSound;
+    [SerializeField]
+    private AudioClip weakHitSound;
+    [SerializeField]
+    private AudioClip fireSound;
+
+    public Text healthText;
+    public int originalHealth;
+
 	// Use this for initialization
 	void Start () {
         isDead = false;
+        originalHealth = health;
+        UpdateHealthText();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        //player = GameObject.FindGameObjectWithTag("Payer").transform;
+        foreach (GameObject go in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
+        {
+            if (go.tag == "Player")
+            {
+                player = go;
+                break;
+            }
+        }
+        //player = GameObject.Find("OVRCameraRig");
+        //Debug.Log(player);
 	}
 	
 	// Update is called once per frame
@@ -52,8 +74,9 @@ public class Enemy : MonoBehaviour {
         GameObject weapon = Instantiate(enemyWeapon);
         weapon.transform.position = fireSpot.transform.position;
         weapon.transform.rotation = fireSpot.transform.rotation;
+        GetComponent<AudioSource>().PlayOneShot(fireSound);
       // robot.Play("Fire");
-        Debug.Log("Fire");
+      //  Debug.Log("Fire");
     }
 
 
@@ -68,6 +91,12 @@ public class Enemy : MonoBehaviour {
             //robot.Play("Die");
             Destroy(gameObject);
             //StartCoroutine("DestroyEnemy");
+            GetComponent<AudioSource>().PlayOneShot(deathSound);
+        }
+        else
+        {
+            UpdateHealthText();
+            GetComponent<AudioSource>().PlayOneShot(weakHitSound);
         }
 
     }
@@ -76,5 +105,11 @@ public class Enemy : MonoBehaviour {
     {
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
+    }
+
+    private void UpdateHealthText()
+    {
+        int percentHealthRemaining = health * 100 / originalHealth;
+        healthText.text = "Health: " + percentHealthRemaining + "%";
     }
 }
