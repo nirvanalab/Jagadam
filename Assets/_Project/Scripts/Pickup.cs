@@ -24,6 +24,7 @@ public class Pickup : MonoBehaviour {
             Debug.Log("Player-Pickup Trigger Enter");
             Player player = FindObjectOfType<Player>();
             player.PickupItem(type);
+            GetComponentInParent<PickupSpawn>().PickupPicked();
             Destroy(gameObject);
         }
     }
