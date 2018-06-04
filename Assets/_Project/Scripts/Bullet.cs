@@ -24,10 +24,10 @@ public class Bullet : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Bullet collision");
+       // Debug.Log("Bullet collision");
         if (collision.gameObject.GetComponent<Enemy>() != null && collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Enemy-Player Collision Enter");
+            //Debug.Log("Enemy-Player Collision Enter");
             collision.gameObject.GetComponent<Enemy>().TakeHit(damage);
             //destroy object when it collides
             Destroy(gameObject);

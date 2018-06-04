@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         foreach (GameObject go in Resources.FindObjectsOfTypeAll(typeof(GameObject)) as GameObject[])
         {
-            if (go.tag == "Player")
+            if (go.tag == "OVR")
             {
                 player = go;
                 break;
@@ -89,6 +89,7 @@ public class Enemy : MonoBehaviour {
             //destroy enemy
             isDead = true;
             //robot.Play("Die");
+            Level.EnemyDestroyed();
             Destroy(gameObject);
             //StartCoroutine("DestroyEnemy");
             GetComponent<AudioSource>().PlayOneShot(deathSound);

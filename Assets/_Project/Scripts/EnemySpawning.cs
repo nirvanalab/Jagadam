@@ -8,6 +8,7 @@ public class EnemySpawning : MonoBehaviour {
     GameObject[] enemies;
 
     private int timesSpawned;
+    
 	// Use this for initialization
 	void Start () {
 		
@@ -25,4 +26,5 @@ public class EnemySpawning : MonoBehaviour {
         enemy.transform.position = transform.position;
 
     }
+
 }

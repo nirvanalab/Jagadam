@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour {
 
     public int health = 100;
     private AmmoManager ammo;
 
+    public Text[] healthTexts;
+  
     public void TakeHit(int amount)
     {
         health -= amount;
@@ -15,27 +17,41 @@ public class Player : MonoBehaviour {
         if (health <= 0)
         {
             //game over
+            health = 0;
+            Level.GameOver(false);
             Debug.Log("Game Over");
         }
+
+        UpdateHalthTexts();
     }
 
+    public void UpdateHalthTexts()
+    {
+        foreach(Text healthText in healthTexts)
+        {
+            healthText.text = "Health: " + health;
+        }
+    }
 	// Use this for initialization
 	void Start () {
         ammo = GetComponent<AmmoManager>();
-	}
+        UpdateHalthTexts();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+  	}
 
     private void pickupHealth()
     {
         health += 50;
-        if ( health > 250 )
+        if ( health > 100 )
         {
-            health = 250;
+            health = 100;
         }
+
+        UpdateHalthTexts();
     }
 
     private void pickupAssaultRifleAmmo()
@@ -45,12 +61,12 @@ public class Player : MonoBehaviour {
 
     private void pickupShortgunAmmo()
     {
-        ammo.AddAmmo(Constants.AssaultRifle, 20);
+        ammo.AddAmmo(Constants.Shotgun, 20);
     }
 
     private void pickupPistolAmmo()
     {
-        ammo.AddAmmo(Constants.AssaultRifle, 20);
+        ammo.AddAmmo(Constants.Pistol, 20);
     }
 
     public  void PickupItem(int pickupItem)

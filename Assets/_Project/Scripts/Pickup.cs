@@ -17,11 +17,11 @@ public class Pickup : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("On Trigger Enter");
+        //Debug.Log("On Trigger Enter");
         Debug.Log(collider.gameObject);
         if (collider.gameObject.tag == "PickupGrabber")
         {
-            Debug.Log("Player-Pickup Trigger Enter");
+            //Debug.Log("Player-Pickup Trigger Enter");
             Player player = FindObjectOfType<Player>();
             player.PickupItem(type);
             GetComponentInParent<PickupSpawn>().PickupPicked();
