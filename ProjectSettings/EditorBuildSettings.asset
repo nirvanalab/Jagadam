@@ -11,3 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Battle.unity
     guid: 464b33b06798b824a9895be2793890b1
+  - enabled: 1
+    path: Assets/_Project/Scenes/Won.unity
+    guid: 908bdf8be5a35ed4288e1ce59f8bf668
+  - enabled: 1
+    path: Assets/_Project/Scenes/Lost.unity
+    guid: c2794f29726eb3b45b10827e204bc652

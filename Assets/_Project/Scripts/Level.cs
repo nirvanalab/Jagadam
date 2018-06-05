@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour {
 
@@ -60,10 +61,12 @@ public class Level : MonoBehaviour {
         if (didWin)
         {
             //congrats 
+            SceneManager.LoadScene("Won");
         }
         else
         {
             //sorry you got destryoned
+            SceneManager.LoadScene("Lost");
         }
 
         //restart options
