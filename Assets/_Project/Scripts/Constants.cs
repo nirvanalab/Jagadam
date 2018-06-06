@@ -14,4 +14,9 @@ public class Constants  {
     public const int PickupAssaultRifleAmmo = 2;
     public const int PickupShotgunAmmo = 3;
     public const int PickupHealth = 4;
+
+    //game type
+    public const string RobotGame = "RobotGame";
+    public const string ZombieGame = "ZombieGame";
+    public const string RobotZombieGame = "RobotZombieGame";
 }

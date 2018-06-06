@@ -22,7 +22,20 @@ public class EnemySpawning : MonoBehaviour {
     public void SpawnEnemy()
     {
         timesSpawned++;
-        GameObject enemy = Instantiate(enemies[Random.Range(0, enemies.Length)]);
+        GameObject enemy = null;
+        if(GamePref.GameTypeSelected == Constants.RobotGame)
+        {
+            enemy = Instantiate(enemies[Random.Range(0, enemies.Length-1)]);
+        }
+        else if (GamePref.GameTypeSelected == Constants.ZombieGame)
+        {
+            enemy = Instantiate(enemies[enemies.Length-1]);
+        }
+        else
+        {
+            enemy = Instantiate(enemies[Random.Range(0, enemies.Length)]);
+        }
+
         enemy.transform.position = transform.position;
 
     }

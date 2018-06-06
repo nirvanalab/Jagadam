@@ -6,6 +6,8 @@ public class BackgroundMusic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().Play();
         DontDestroyOnLoad(gameObject);
 	}
 	

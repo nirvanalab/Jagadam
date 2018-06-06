@@ -6,15 +6,34 @@ using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour {
 
-    public void ButtonBegin()
+    public void PlayRobot()
     {
-        Debug.Log("Begin Button Clicked");
+        //GamePref.GameTypeSelected = "RobotGame";
+        GamePref.GameTypeSelected = Constants.RobotGame;
+        SceneManager.LoadScene("Battle");     
+    }
+
+    public void PlayZombie()
+    {
+        GamePref.GameTypeSelected = Constants.ZombieGame;
+        SceneManager.LoadScene("Battle");
+      
+    }
+
+    public void PlayRobotAndZombie()
+    {
+        GamePref.GameTypeSelected = Constants.RobotZombieGame;
+        SceneManager.LoadScene("Battle");
+      
+    }
+
+    public void ReplayGame()
+    {
         SceneManager.LoadScene("Battle");
     }
 
-    public void ButtonExit()
+    public void MainMenu()
     {
-        Debug.Log("Exit Button Clicked");
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 }
