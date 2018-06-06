@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour {
 
     public Transform fireSpot;
     UnityEngine.AI.NavMeshAgent agent;
-    public Animator robot;
+    public Animator anim;
 
     private bool isDead;
     public GameObject player;

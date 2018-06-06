@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - PickupGrabber
   - OVR
+  - Zombie
   layers:
   - Default
   - TransparentFX
