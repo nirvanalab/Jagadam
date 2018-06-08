@@ -57,6 +57,6 @@ This project is built using Unity 2017.3.1f1 , VRTK sdk
 
 **References**
 This project utilizes the [VRTK](http://https://github.com/thestonefox/VRTK "VRTK") SDK .
-Assests have been taken from the Unity Asset Store and Raywenderlich tutorials.
+Assests have been taken from various free sources on Unity Asset Store and Raywenderlich Unity tutorials.
 
 
