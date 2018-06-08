@@ -13,6 +13,8 @@ This project tries to bring together the core elements of a shooter game which i
 **Emotion Conveyed**
 The  emotion which this experienes offers is **"Courage" & "Fight"** the fears
 
+***Video Walkthrough***: Video of the project with captions can be found [here](https://youtu.be/aGTOA9kUS_M "here")
+
 **Different Aspects  Incorporated**
 
 ***FUNDAMENTALS***
