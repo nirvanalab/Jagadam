@@ -13,6 +13,8 @@ This project tries to bring together the core elements of a shooter game which i
 **Emotion Conveyed**
 The  emotion which this experienes offers is **"Courage" & "Fight"** the fears
 
+***Video Walkthrough***: Video of the project with captions can be found [here](https://youtu.be/aGTOA9kUS_M "here")
+
 **Different Aspects  Incorporated**
 
 ***FUNDAMENTALS***
@@ -55,6 +57,6 @@ This project is built using Unity 2017.3.1f1 , VRTK sdk
 
 **References**
 This project utilizes the [VRTK](http://https://github.com/thestonefox/VRTK "VRTK") SDK .
-Assests have been taken from the Unity Asset Store and Raywenderlich tutorials.
+Assests have been taken from various free sources on Unity Asset Store and Raywenderlich Unity tutorials.
 
 
